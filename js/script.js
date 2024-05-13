@@ -84,6 +84,14 @@ const { createApp } = Vue
             } else{
                 this.imgSel = 0
             }
+        },
+        hover(){
+            clearInterval(autoplay)
+            console.log("autoplay fermo")
+        },
+        afterHover(){
+            autoplay = setInterval(this.play,3000)
+            console.log("autoplay riparte" +  autoplay )
         }
         
     },
