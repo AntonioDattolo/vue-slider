@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -16,7 +17,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div v-for="slide, i in slides" class="item">
+                <div v-for="slide, i in slides" :class="selected(i)" class="item">
                     <img :src="slide.image" alt="slide.title"  />
                     <div class="text">
                         <h3>{{ slide.title}}</h3>
@@ -26,13 +27,12 @@
                     </div>
                 </div>
 
-                <div v-for="slide, i in slides" class="thumbs">
-                    <!-- <div class="prev"></div>
-                    <div class="next"></div> -->
-                    <div class="thumb active">
-                        <img :src="slide.image" alt="slide.title" />
+                <div class="thumbs">
+                    <div @click="prev(i)" class="prev"></div>
+                    <div @click="next(i)" class="next"></div>
+                    <div v-for="slide,i in slides" :class="selected(i)" class="thumb">
+                        <img :src="slide.image"  alt="slide.title" />
                     </div>
-                    
                 </div> 
 
             </div>

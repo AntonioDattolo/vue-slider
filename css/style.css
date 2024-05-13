@@ -10,12 +10,13 @@
     justify-content: center;
     align-items: center;
 }
-
+/* AGGIUNTA PROPRIETà DISPLAY:NONE PER SLIDER */
 .item {
     float: left;
     width: 700px;
     height: 300px;
     position: relative;
+    display: none;
 }
 
 .item img {
@@ -23,7 +24,10 @@
     height: 100%;
     object-fit: cover;
 }
-
+/* AGGIUNTA FUNZIONE ACTIVE PER SLIDER */
+.item.active{
+    display: block;
+}
 .item .text {
     position: absolute;
     right: 20px;
@@ -103,3 +107,4 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
     left: 50%;
     transform: translate(-50%) rotate(135deg);
 }
+
